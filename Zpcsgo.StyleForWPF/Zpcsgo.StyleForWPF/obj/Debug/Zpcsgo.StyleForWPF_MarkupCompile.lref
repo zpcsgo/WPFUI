@@ -1,8 +1,12 @@
 ﻿
 
-FF:\米多\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\CusControl\ZpcsgoWindow.xaml;;
-FF:\米多\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\Styles\BaseStyles.xaml;;
-FF:\米多\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\Styles\DataGridStyle.xaml;;
-FF:\米多\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\Styles\ScrollBarStyle.xaml;;
-FF:\米多\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\Themes\DefaultTheme.xaml;;
+FE:\WPFUI\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\BaseSetting\Base.xaml;;
+FE:\WPFUI\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\CusControl\ZpcsgoWindow.xaml;;
+FE:\WPFUI\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\GradationColor\Colors.xaml;;
+FE:\WPFUI\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\Styles\BaseStyles.xaml;;
+FE:\WPFUI\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\Styles\CheckboxStyle.xaml;;
+FE:\WPFUI\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\Styles\DataGridStyle.xaml;;
+FE:\WPFUI\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\Styles\RadioButton.xaml;;
+FE:\WPFUI\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\Styles\ScrollBarStyle.xaml;;
+FE:\WPFUI\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\Themes\DefaultTheme.xaml;;
 

@@ -6,10 +6,30 @@
         xmlns:local="clr-namespace:TestStyle"
         xmlns:ctrl="clr-namespace:Zpcsgo.StyleForWPF.CusControl;assembly=Zpcsgo.StyleForWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        CaptionLeftImage="Images/Z.png"
+        Title="ZPCSGO" Height="600" Width="800">
+    <ctrl:ZpcsgoWindow.ExpendControl>
+        <UserControl>
+            <Grid>
+                <ctrl:ZpcsgoButton FontFamily="{DynamicResource FontFamily_FontAwesome}" Height="50" Width="50" MouseEnterrBackground="Black" MouseEnterrBackgroundOpacity="0.1" Content="&#xf27b;" FontSize="16" Foreground="White" Template="{DynamicResource WindowButtonTemplate}" Click="Button_Click"></ctrl:ZpcsgoButton>
+            </Grid>
+        </UserControl>
+    </ctrl:ZpcsgoWindow.ExpendControl>
     <Grid>
-        <DataGrid Name="datagrid">
+        <DataGrid Name="datagrid" EnableRowVirtualization="False">
             <DataGrid.Columns>
+                <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <RadioButton></RadioButton>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="姓名" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="年龄" Binding="{Binding Age}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="电话" Binding="{Binding Tel}" Width="*"></DataGridTextColumn>

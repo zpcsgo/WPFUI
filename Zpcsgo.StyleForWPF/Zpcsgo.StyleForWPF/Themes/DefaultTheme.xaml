@@ -3,27 +3,33 @@
                     xmlns:local="clr-namespace:Zpcsgo.StyleForWPF.Themes">
     <!--所有边框的默认颜色-->
     <SolidColorBrush x:Key="Color_Border" Color="#E4E4E4"></SolidColorBrush>
-    <!--窗体色系-->
+    <!--*******************窗体*******************-->
     <!--窗体头部背景色（激活状态）-->
-    <SolidColorBrush x:Key="Color_TitleBarBackground" Color="#cccccc"></SolidColorBrush>
+    <SolidColorBrush x:Key="Color_WindowTitleBarBackground" Color="#2196f3"></SolidColorBrush>
     <!--窗体头部背景色（非激活状态）-->
-    <SolidColorBrush x:Key="Color_TitleBarBackground_NoActive" Color="#cccccc"></SolidColorBrush>
-
-
-
-    <!--滚动条-->
+    <SolidColorBrush x:Key="Color_TitleBarBackground_NoActive" Color="#CCCCCC"></SolidColorBrush>
+    <!--*******************滚动条************************-->
     <!--滑道的背景色-->
-
     <SolidColorBrush x:Key="Color_ScrollBar_Track" Color="#E4EAF4"></SolidColorBrush>
     <SolidColorBrush x:Key="Color_ScrollBar_Thumb" Color="#C2C3C9"></SolidColorBrush>
-    <SolidColorBrush x:Key="Color_ScrollBar_Thumb_NoActive" Color="#008CEE"></SolidColorBrush>
-    
-    <!--表格-->
+    <!--滚动条激活状态-->
+    <SolidColorBrush x:Key="Color_ScrollBar_Thumb_Active" Color="#4568DC"></SolidColorBrush>
+    <!--*******************表格*******************-->
     <!--头部背景色-->
     <SolidColorBrush x:Key="Color_DataGridHeader_Background" Color="Transparent"></SolidColorBrush>
     <!--单元格和行选中的颜色-->
     <SolidColorBrush  x:Key="Color_DataGridRowAndCell_Background_Selected" Color="#F5F5F5"></SolidColorBrush>
     <SolidColorBrush  x:Key="Color_DataGridRowAndCell_Font_Selected" Color="#000000"></SolidColorBrush>
-
-    
+    <!--*******************复选框（Checkbox）*******************-->
+    <!--未选择颜色-->
+    <SolidColorBrush x:Key="Color_Checkbox" Color="#CCCCCC"></SolidColorBrush>
+    <!--选中状态-->
+    <SolidColorBrush x:Key="Color_Checkbox_Checked" Color="#4568DC"></SolidColorBrush>
+    <!--不确定状态-->
+    <SolidColorBrush x:Key="Color_Checkbox_Indeterminate" Color="#4568DC"></SolidColorBrush>
+    <!--*******************单选按钮（RadioButton）*******************-->
+    <!--未选择颜色-->
+    <SolidColorBrush x:Key="Color_RadioButton" Color="#CCCCCC"></SolidColorBrush>
+    <!--选中状态-->
+    <SolidColorBrush x:Key="Color_RadioButton_Checked" Color="#4568DC"></SolidColorBrush>
 </ResourceDictionary>

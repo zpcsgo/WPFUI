@@ -5,15 +5,17 @@
 
     <!--默认WindowBase的样式-->
     <Style x:Key="DefaultWindowStyle" TargetType="{x:Type local:ZpcsgoWindow}">
-
-        <Setter Property="Width" Value="480"/>
-        <Setter Property="Height" Value="320"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Color_WindowTitleBarBackground}"/>
+        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="CaptionHeight" Value="40"/>
+        <Setter Property="CaptionHeight" Value="50"/>
+        <Setter Property="CaptionLeftImageHeight" Value="40"/>
+        <Setter Property="CaptionLeftImageWidth" Value="40"/>
+        <Setter Property="CaptionTitleFontSize" Value="16"/>
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="ResizeMode" Value="CanResizeWithGrip"/>
-        <Setter Property="CaptionBackground" Value="#0099FF"></Setter>
+        <Setter Property="CaptionBackground" Value="{DynamicResource GradationColor_17}"></Setter>
         <!--窗体基本设置 shell:WindowChrome-->
         <Setter Property="shell:WindowChrome.WindowChrome">
             <Setter.Value>
@@ -24,66 +26,84 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:ZpcsgoWindow}">
-                    <Grid Margin="6">
-                        <!--背景-->
-                        <Border x:Name="Bg"  
+                    <Border x:Name="Border_Shadow" Padding="7">
+                        <Grid>
+                            <!--背景-->
+                            <Border x:Name="Bg"  
                             Background="{TemplateBinding Background}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
-                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  />
-                        <Border  x:Name="BgInner" 
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Black" BlurRadius="10" Direction="0" ShadowDepth="0" Opacity="0.7" />
+                                </Border.Effect>
+                            </Border>
+                            <Border  x:Name="BgInner" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  />
-                        <Grid Margin="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition MinHeight="18" Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <!--Caption标题部分-->
-                            <Border Margin="0" Grid.Row="0" Background="{TemplateBinding CaptionBackground}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <!--Header部分-->
-                                    <StackPanel x:Name="PART_Header"  Height="{TemplateBinding CaptionHeight}"  Orientation="Horizontal" VerticalAlignment="Center">
-                                        <TextBlock VerticalAlignment="Center" Margin="5"  Text="{TemplateBinding Title}"/>
-                                    </StackPanel>
-                                    <!--窗体功能按钮：最小、最大、关闭-->
-                                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Right" Height="{TemplateBinding CaptionHeight}">
-                                        <Button x:Name="btnMin"  Margin="1" 
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition MinHeight="18" Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <!--Caption标题部分-->
+                                <Border Margin="0" Grid.Row="0" Background="{TemplateBinding CaptionBackground}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <!--Header部分-->
+                                        <StackPanel x:Name="PART_Header" Height="{TemplateBinding CaptionHeight}"  Orientation="Horizontal" VerticalAlignment="Center">
+                                            <Image Source="{TemplateBinding CaptionLeftImage}" 
+                                                   Height="{TemplateBinding CaptionLeftImageHeight}" 
+                                                   Width="{TemplateBinding CaptionLeftImageWidth}" Margin="10 0 5 0"></Image>
+                                            <TextBlock FontWeight="Bold" FontSize="{TemplateBinding CaptionTitleFontSize}" VerticalAlignment="Center"  Foreground="{TemplateBinding CaptionForegound}"  Text="{TemplateBinding Title}"/>
+                                        </StackPanel>
+                                        <!--窗体功能按钮：最小、最大、关闭-->
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Right" Height="{TemplateBinding CaptionHeight}">
+                                            <UserControl  shell:WindowChrome.IsHitTestVisibleInChrome="True"  Content="{TemplateBinding ExpendControl}" Height="{TemplateBinding CaptionHeight}"></UserControl>
+                                            <local:ZpcsgoButton x:Name="btnMin"  Margin="1" 
                                                 shell:WindowChrome.IsHitTestVisibleInChrome="True"
                                                 Content="&#xe60d;"
+                                                VerticalAlignment="Top"
                                                 Style="{DynamicResource WindowButtonStyle}"
                                                 Command="{Binding Path=MinimizeWindowCommand,RelativeSource={RelativeSource TemplatedParent}}"/>
 
-                                        <Button x:Name="btnMax"   Margin="1" 
+                                            <local:ZpcsgoButton x:Name="btnMax"   Margin="1" 
                                                 shell:WindowChrome.IsHitTestVisibleInChrome="True" 
                                                 Style="{DynamicResource WindowButtonStyle}"
                                                 Content="&#xe62b;"
+                                                VerticalAlignment="Top"
                                                 Command="{Binding Path=MaximizeWindowCommand,RelativeSource={RelativeSource TemplatedParent}}"/>
 
-                                        <Button x:Name="btnClose" Margin="1" 
-                                                Style="{DynamicResource WindowButtonStyle}"
+                                            <local:ZpcsgoButton x:Name="btnClose" Margin="1" 
+                                                Style="{DynamicResource WindowButtonStyle_Close}"
                                                 Content="&#xe60a;"
+                                                VerticalAlignment="Top"
                                                 shell:WindowChrome.IsHitTestVisibleInChrome="True"
                                                 Command="{Binding Path=CloseWindowCommand,RelativeSource={RelativeSource TemplatedParent}}"/>
-                                    </StackPanel>
-                                </Grid>
-                            </Border>
-                            <!--窗体内容区域-->
-                            <AdornerDecorator Grid.Row="1" Margin="3,0,3,3">
-                                <ContentPresenter Content="{TemplateBinding Content}" />
-                            </AdornerDecorator>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                                <!--窗体内容区域-->
+                                <AdornerDecorator Grid.Row="1" Margin="3,0,3,3">
+                                    <ContentPresenter Content="{TemplateBinding Content}" />
+                                </AdornerDecorator>
+                            </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="WindowState" Value="Maximized">
                             <Setter Property="Content" TargetName="btnMax" Value="&#xe62b;"></Setter>
+                            <Setter TargetName="Border_Shadow" Property="Padding" Value="0"></Setter>
                         </Trigger>
                         <Trigger Property="WindowState" Value="Normal">
                             <Setter Property="Content" TargetName="btnMax" Value="&#xe65b;"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabledShadow" Value="False">
+                            <Setter TargetName="Border_Shadow" Property="Padding" Value="0"></Setter>
+                            <Setter  Property="BorderThickness" Value="1"></Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -92,40 +112,48 @@
     </Style>
 
     <!--关闭、最小化、还原按钮-->
-    <Style x:Key="WindowButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="FontFamily" Value="/Zpcsgo.StyleForWPF;component/Fonts/#SF2015"></Setter>
-        <Setter Property="Height" Value="30"></Setter>
-        <Setter Property="Width" Value="30"></Setter>
-        <Setter Property="FontSize" Value="12"></Setter>
+    <Style x:Key="WindowButtonStyle" TargetType="{x:Type local:ZpcsgoButton}">
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily_Iconfont}"></Setter>
+        <Setter Property="Height" Value="50"></Setter>
+        <Setter Property="Width" Value="50"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
         <Setter Property="Foreground" Value="White"></Setter>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Grid>
-                        <Border  
+        <Setter Property="MouseEnterrBackground" Value="#000000"/>
+        <Setter Property="MouseEnterrBackgroundOpacity" Value="0.1"/>
+        <Setter Property="Template" Value="{DynamicResource WindowButtonTemplate}"/>
+    </Style>
+    <Style x:Key="WindowButtonStyle_Close" TargetType="{x:Type local:ZpcsgoButton}">
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily_Iconfont}"></Setter>
+        <Setter Property="Height" Value="50"></Setter>
+        <Setter Property="Width" Value="50"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="MouseEnterrBackground" Value="#ff0000"/>
+        <Setter Property="Template" Value="{DynamicResource WindowButtonTemplate}"/>
+    </Style>
+    <ControlTemplate x:Key="WindowButtonTemplate" TargetType="local:ZpcsgoButton">
+        <Grid>
+            <Border  
                             Name="BD"
                             Height="{TemplateBinding Height}" 
                             Width="{TemplateBinding Width}">
-                        </Border>
-                        <Border Background="Transparent" 
+            </Border>
+            <Border Background="Transparent" 
                             BorderBrush="Transparent">
-                            <TextBlock 
+                <TextBlock 
                             FontFamily="{TemplateBinding FontFamily}"
                             Text="{TemplateBinding Content}" 
                             VerticalAlignment="Center" 
                             FontSize="{TemplateBinding FontSize}"
                             Foreground="{TemplateBinding Foreground}"
                             HorizontalAlignment="Center"></TextBlock>
-                        </Border>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="BD" Property="Background" Value="#FFFFFF"></Setter>
-                            <Setter TargetName="BD" Property="Opacity" Value="0.1"></Setter>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+            </Border>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="BD" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=MouseEnterrBackground}"></Setter>
+                <Setter TargetName="BD" Property="Opacity" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=MouseEnterrBackgroundOpacity}"></Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
 </ResourceDictionary>

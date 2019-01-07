@@ -82,7 +82,7 @@
                     <Border Name="aa" Width="10" CornerRadius="5" Background="{DynamicResource Color_ScrollBar_Thumb}"></Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="aa" Property="Background" Value="{DynamicResource Color_ScrollBar_Thumb_NoActive}"></Setter>
+                            <Setter TargetName="aa" Property="Background" Value="{DynamicResource Color_ScrollBar_Thumb_Active}"></Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

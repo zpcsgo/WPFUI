@@ -35,11 +35,16 @@ namespace TestStyle
                 {
                     Name = "zpc" + i.ToString(),
                     Age = i + 10,
-                    Tel = "15229065699",
+                    Tel = "152****5699",
                     Addr="韩城"
                 });
             }
             datagrid.ItemsSource = list;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("可以点击");
         }
     }
     public class Student

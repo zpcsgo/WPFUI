@@ -38,7 +38,7 @@ namespace Zpcsgo.StyleForWPF.CusControl {
     /// <summary>
     /// ZpcsgoWindow
     /// </summary>
-    public partial  class ZpcsgoWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
+    public  partial class ZpcsgoWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         private bool _contentLoaded;
         

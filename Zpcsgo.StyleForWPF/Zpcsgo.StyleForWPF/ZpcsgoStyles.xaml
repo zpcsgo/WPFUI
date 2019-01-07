@@ -2,9 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Themes/DefaultTheme.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="BaseSetting/Base.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="GradationColor/Colors.xaml"></ResourceDictionary>
         <ResourceDictionary Source="CusControl/ZpcsgoWindow.xaml"></ResourceDictionary>
         <ResourceDictionary Source="Styles/BaseStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="Styles/DataGridStyle.xaml"></ResourceDictionary>
         <ResourceDictionary Source="Styles/ScrollBarStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="Styles/CheckboxStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="Styles/RadioButton.xaml"></ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

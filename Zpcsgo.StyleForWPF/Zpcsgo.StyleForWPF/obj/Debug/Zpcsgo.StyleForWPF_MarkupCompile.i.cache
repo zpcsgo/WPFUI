@@ -4,17 +4,17 @@
 library
 C#
 .cs
-F:\米多\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\obj\Debug\
+E:\米多\Zpcsgo.StyleForWPF\Zpcsgo.StyleForWPF\obj\Debug\
 Zpcsgo.StyleForWPF
 none
 false
 DEBUG;TRACE
 
-62056846317
+101462748190
 
-9-813411051
+11-893770602
 13738642453
-CusControl\ZpcsgoWindow.xaml;Styles\BaseStyles.xaml;Styles\DataGridStyle.xaml;Styles\ScrollBarStyle.xaml;Themes\DefaultTheme.xaml;ZpcsgoAllStyles.xaml;
+BaseSetting\Base.xaml;CusControl\ZpcsgoWindow.xaml;GradationColor\Colors.xaml;Styles\BaseStyles.xaml;Styles\CheckboxStyle.xaml;Styles\DataGridStyle.xaml;Styles\RadioButton.xaml;Styles\ScrollBarStyle.xaml;Themes\DefaultTheme.xaml;ZpcsgoStyles.xaml;
 
-False
+True
 

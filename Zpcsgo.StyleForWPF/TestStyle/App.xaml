@@ -6,7 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Zpcsgo.StyleForWPF;component/ZpcsgoAllStyles.xaml"/>
+                <ResourceDictionary Source="/Zpcsgo.StyleForWPF;component/ZpcsgoStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
